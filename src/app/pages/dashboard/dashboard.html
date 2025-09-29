@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="sidebar">
+    <div>
+      <span class="material-icons icon-top">apartment</span>
+      <h3>Sistema de Gestión Edificio</h3>
+    </div>
+    <hr class="separation" />
+    <nav>
+      <a routerLink="/dashboard/packages" routerLinkActive="active">
+      📦 Gestión de Paquetes
+    </a>
+    <a routerLink="/dashboard/gym" routerLinkActive="active">
+      🏋️ Gestión de Gimnasio
+    </a>
+    </nav>
+  </div>
+  <main class="content">
+    <router-outlet></router-outlet> <!-- IMPORTANTE -->
+  </main>
+</div>

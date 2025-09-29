@@ -1,0 +1,87 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>Regístrate</h2>
+    <p class="subtitle">Regístrate en el sistema</p>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">Nombre</label>
+        <input
+          type="text"
+          id="firstName"
+          formControlName="firstName"
+          class="form-control"
+          placeholder="Ingresa tu nombre"
+        />
+        @for (msg of registerForm | errorMessage:errorMessages:'firstName'; track msg) {
+        <small class="error-message">{{ msg }}</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Apellido</label>
+        <input
+          type="text"
+          id="lastName"
+          formControlName="lastName"
+          class="form-control"
+          class="form-control"
+          placeholder="Ingresa tu apellido"
+        />
+        @for (msg of registerForm | errorMessage:errorMessages:'lastName'; track msg) {
+        <small class="error-message">{{ msg }}</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Ingresa tu email" />
+        @for (msg of registerForm | errorMessage:errorMessages:'email'; track msg){
+        <small class="error-message">{{ msg }}</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Teléfono</label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          class="form-control"
+          formControlName="phoneNumber"
+          placeholder="Ingresa teléfono"
+        />
+        @for (msg of registerForm | errorMessage:errorMessages:'phoneNumber';track msg){
+        <small class="error-message">{{ msg }}</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Ingresa tu contraseña"
+        />
+        @for(msg of registerForm | errorMessage:errorMessages:'password'; track msg){
+        <small class="error-message">{{ msg }}</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          placeholder="Reingresa tu contraseña"
+        />
+        @for (msg of registerForm | errorMessage:errorMessages:'confirmPassword'; track msg) {
+        <small class="error-message">{{ msg }}</small>
+        }
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid || isLoading" class="btn">Registrar</button>
+    </form>
+  </div>
+</div>
