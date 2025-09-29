@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PackageResponse } from '../models/package';
+import { CreatePackageRequest, PackageResponse } from '../models/package';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,5 +13,11 @@ export class PackagesService {
 
   getAllPendingPackages(): Observable<PackageResponse[]> {
     return this.http.get<PackageResponse[]>(`${this.API_URL}/packages/pending`);
+  }
+
+  createPackage(request: CreatePackageRequest, currentUserId: number): Observable<PackageResponse> {
+    return this.http.post<PackageResponse>(`${this.API_URL}/packages`, request, {
+      params: { currentUserId: currentUserId.toString() },
+    });
   }
 }
