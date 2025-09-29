@@ -27,3 +27,9 @@ export enum PackageStatus {
   Delivered = "DELIVERED",
   Returned = "RETURNED"
 }
+
+export interface UpdatePackageStatusRequest {
+  status: PackageStatus;
+  deliveryNotes?: string;
+  recipientUserId?: number;
+}
