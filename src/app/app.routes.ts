@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard';
-import { PackagesCreatComponent } from './packages/create/create';
+import { PackagesCreateComponent } from './packages/create/create';
 import { PackagesHistoryComponent } from './packages/history/history';
 import { PackagesDetailComponent } from './packages/detail/detail';
 import { PackagesPendingComponent } from './packages/pending/pending';
@@ -21,7 +21,7 @@ export const routes: Routes = [
         children: [
           { path: '', redirectTo: 'pending', pathMatch: 'full' },
           { path: 'pending', component: PackagesPendingComponent },
-          { path: 'create', component: PackagesCreatComponent },
+          { path: 'create', component: PackagesCreateComponent },
           { path: 'history', component: PackagesHistoryComponent },
           { path: ':id', component: PackagesDetailComponent },
         ],

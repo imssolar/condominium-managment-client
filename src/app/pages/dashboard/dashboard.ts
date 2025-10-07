@@ -8,5 +8,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router"
   styleUrl: './dashboard.css'
 })
 export class DashboardComponent {
+  isPackageMenuOpen: boolean = false
 
+  togglePackageMenu(){
+    this.isPackageMenuOpen = !this.isPackageMenuOpen;
+  }
 }
