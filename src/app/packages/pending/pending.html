@@ -1,37 +1,34 @@
 <div class="packages-container">
-    <h2>Paquetes Pendientes</h2>
-    @if (packages.length === 0) {
-        <div>No hay paquetes</div>
-    }
-    <table>
-        <thead>
-            <tr>
-                <th>N° Seguimiento</th>
-                <th>Empresa</th>
-                <th>Departamento</th>
-                <th>Fecha recepción</th>
-                <th>Recibido por</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (package of packages; track $index) {
-                <tr>
-                    <td>{{package.trackingNumber}}</td>
-                </tr>
-                <tr>
-                    <td>{{package.courier}}</td>
-                </tr>
-                <tr>
-                    <td>{{package.apartmentNumber}}</td>
-                </tr>
-                <tr>
-                    <td>{{package.receivedDate | date: 'short'}}</td>
-                </tr>
+  <h2>Paquetes Pendientes</h2>
+  @if (packages.length === 0) {
+  <div class="no-packages">No hay paquetes</div>
+  } @if (packages.length > 0){
+  <table class="packages-table">
+    <thead>
+      <tr>
+        <th>N° Seguimiento</th>
+        <th>Empresa</th>
+        <th>Departamento</th>
+        <th>Fecha recepción</th>
+        <th>Recibido por</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (package of packages; track $index) {
+      <tr>
+        <td>{{ package.trackingNumber }}</td>
 
-                <tr>
-                    <td>{{package.receivedByUserName}}</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        <td>{{ package.courier }}</td>
+
+        <td>{{ package.apartmentNumber }}</td>
+
+        <td>{{ package.receivedDate | date : 'short' }}</td>
+
+        <td>{{ package.receivedByUserName }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  }
 </div>

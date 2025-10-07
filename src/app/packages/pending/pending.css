@@ -1,0 +1,125 @@
+
+
+.packages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.packages-container h2 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.no-packages {
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    padding: 2rem;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.packages-table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+/* Headers oscuros - mantienen el tema del sidebar */
+.packages-table thead {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 2px solid #3b82f6;
+}
+
+.packages-table th {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    border-right: 1px solid #334155;
+}
+
+.packages-table th:last-child {
+    border-right: none;
+}
+
+/* Cuerpo blanco - fácil lectura */
+.packages-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    font-weight: 500;
+    background: #ffffff;
+}
+
+.packages-table tbody tr:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.packages-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Colores específicos por columna para mejor UX */
+.packages-table td:first-child {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.packages-table td:nth-child(2) {
+    font-weight: 600;
+    color: #059669;
+}
+
+.packages-table td:nth-child(3) {
+    font-weight: 700;
+    color: #d97706;
+    text-align: center;
+}
+
+.packages-table td:nth-child(4) {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.packages-table td:nth-child(5) {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .packages-container {
+        padding: 1rem;
+    }
+    
+    .packages-table {
+        font-size: 0.85rem;
+    }
+    
+    .packages-table th,
+    .packages-table td {
+        padding: 0.7rem 0.5rem;
+    }
+}
