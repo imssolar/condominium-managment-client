@@ -1,1 +1,20 @@
-<p>create works!</p>
+<div class="create-container">
+    <div class="create-package-card">
+        <h2>Crear Paquete</h2>
+        <p class="subtitle">Registra el paquete recién llegado a nuestra comunidad</p>
+        <form [formGroup]="createPackageForm">
+            <div class="form-group">
+                <label for="trackingNumber">Número de Pedido</label>
+                <input
+                type="text"
+                id="trackingNumber"
+                formControlName="trackingNumber"
+                class="form-control"
+                placeholder="Número de pedido"
+                >
+            </div>
+
+            
+        </form>
+    </div>
+</div>
