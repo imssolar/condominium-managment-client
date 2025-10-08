@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router"
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   imports: [RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrl: './dashboard.css',
 })
 export class DashboardComponent {
-  isPackageMenuOpen: boolean = false
+  menuStates: { [key: string]: boolean } = {
+    packages: false,
+    gym: false,
+    residents: false,
+  };
 
-  togglePackageMenu(){
-    this.isPackageMenuOpen = !this.isPackageMenuOpen;
+  toggleMenu(menuName: string) {
+    this.menuStates[menuName] = !this.menuStates[menuName];
   }
 }

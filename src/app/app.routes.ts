@@ -26,6 +26,13 @@ export const routes: Routes = [
           { path: ':id', component: PackagesDetailComponent },
         ],
       },
+      {
+        path: 'gym',
+        children: [
+          { path: '', redirectTo: '', pathMatch: 'full' },
+          { path: 'request', component: PackagesCreateComponent },
+        ],
+      },
     ],
   },
 ];

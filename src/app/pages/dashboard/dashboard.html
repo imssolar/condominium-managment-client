@@ -6,12 +6,12 @@
     </div>
     <hr class="separation" />
     <nav>
-      <div class="menu-section">
-        <button class="menu-toggle" (click)="togglePackageMenu()">
+      <div >
+        <button class="menu-toggle" (click)="toggleMenu('packages')">
           📦 Gestión de Paquetes
-          <span class="arrow">{{ isPackageMenuOpen ? '▼' : '▶' }}</span>
+          <span class="arrow">{{ menuStates['packages'] ? '▼' : '▶' }}</span>
         </button>
-        <div class="submenu" [class.open]="isPackageMenuOpen">
+        <div class="submenu" [class.open]="menuStates['packages']">
           <a routerLink="/dashboard/packages/pending" routerLinkActive="active">
             📋 Paquetes Pendientes
           </a>
@@ -22,9 +22,18 @@
         </div>
       </div>
 
+      <div>
+        <button class="menu-toggle" (click)="toggleMenu('gym')">
+          🏋️ Gestión de Gimnasio
+          <span class="arrow">{{ menuStates['gym'] ? '▼' : '▶' }}</span>
+        </button>
+        <div class="submenu" [class.open]="menuStates['gym']">
+          <a routerLink="/dashboard/gym/request" routerLinkActive="active">
+            ➕ Registrar uso Gym
+          </a>
+        </div>
+      </div>
 
-      
-      <!--<a routerLink="/dashboard/gym" routerLinkActive="active"> 🏋️ Gestión de Gimnasio </a>-->!
     </nav>
   </div>
   <main class="content">
